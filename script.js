@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(movieName);
             try {
                 movieResults.innerHTML = `<div class="loading">Searching Movies...</div>`
-                const response = await fetch(`http://www.omdbapi.com?apikey=14e82aca&s=${movieName}`)
+                const response = await fetch(`http://www.omdbapi.com/?s=${movieName}&apikey=14e82aca`)
                 const data = await response.json()
                 if(data.response === "False"){
                     throw new Error('No Movies Found!')
